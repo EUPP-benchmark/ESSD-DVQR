@@ -26,7 +26,7 @@ The following table describes variable names that are referred to in training as
 
 | Variable | Description |
 | ---- | ----------- | 
-| `inite_date` | Initialization date of the ensemble forecasts. |
+| `init_date` | Initialization date of the ensemble forecasts. |
 | `valid_date` | Valid date of the ensemble forecasts. |
 | `leadtime` | Lead time of the ensemble forecasts in hours. |
 | `id` | Station id. |
