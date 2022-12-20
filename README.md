@@ -5,6 +5,8 @@ D-vine copula based postprocessing (DVQR) scripts for the ESSD benchmark.
 The code is provided as supplementary material with
 - The EUPPBench post-processing benchmark dataset v1.0, ...
 
+Please cite this article if you use (a part of) this code for a publication.
+
 # Method
 
 In the **D-vine (drawable vine) copula based postprocessing**, a multivariate conditional copula $C$ is estimated using a pair-copula construction for the graphical D-vine structure according to [Kraus and Czado, (2016)](https://arxiv.org/pdf/1510.04161.pdf). D-vine copulas enable a flexible modelling of the dependence structure between the observation $y$ and the ensemble forecast $x_1, \ldots, x_m$ (see, e.g. [Möller et al., (2018)](https://arxiv.org/pdf/1811.02255.pdf)). The covariates $x_1, \ldots, x_m$ are selected by their predictive strength based on the conditional log-likelihood. Afterwards, the D-vine copula quantile regression (DVQR) allows to predict quantiles $\alpha\in (0,1)$ that represent the postprocessed forecasts via
