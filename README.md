@@ -13,7 +13,7 @@ In the **D-vine (drawable vine) copula based postprocessing**, a multivariate co
 
 $$F^{-1}_{y\vert x_1, \ldots, x_m}(\alpha\vert x_1(t), \ldots, x_m(t)):=F_y^{-1}\left(C^{-1}(\alpha\vert F_{x_1}(x_1(t)),\ldots, F_{x_m}(x_m(t)))\right),$$    
 
-where $F_{x_i}$ denote the marginal distributions of $x_i$ for all $i=1,\ldots, m$, $F_{y}^{-1}$ the inverse marginal distribution of $y$ and $C^{-1}$ the conditional copula quantile function. The marginal distributions will be estimated by kernel densities in our case.
+where $F_{x_i}$ denote the marginal distributions of $x_i$ for all $i=1,\ldots, m$, $F_{y}^{-1}$ the inverse marginal distribution of $y$ and $C^{-1}$ the conditional copula quantile function. The marginal distributions will be estimated by kernel densities in our case. DVQR is estimated separately for every station and lead time using a seasonal adaptive training period.
 
 # Implementation details
 
