@@ -207,14 +207,13 @@ tpredictors <- vpredictors <- c("ctrl", "mean")
 family_set <- "all"
 selcrit <- "aic" 
 order <- NA
-nweeks <- rep(seq(0, 10, 2), each = 21)
-leadtime <- rep(seq(0, 120, 6), 6)
 
-for (s in 1:length(nweeks)) {
+leadtime <- seq(0, 120, 6)
+for (s in 1:length(leadtime) {
 
 lt <- leadtime[s]
 dates <- unique(vdata[vdata$leadtime == lt, "valid_date"])
-nw <- nweeks[s]
+nw <- 2
 ids <- unique(tdata$id)
 
 # start evaluation for each station for a fixed leadtime
@@ -243,4 +242,3 @@ nam <- paste0("./data/results.dvine.lt", lt, ".nw", nw, ".Rdata")
 save(results.dvine, file = nam)
 
 }
-

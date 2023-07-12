@@ -4,7 +4,7 @@ library(doMC)
 registerDoMC(cores = detectCores())
 
 # set working directory
-setwd("~/Desktop/benchmarkdata_new")
+setwd("./data/")
 
 ################################################################################
 
@@ -183,7 +183,7 @@ save(benchmark_t2m_test, file = "benchmark_t2m_test.Rdata")
 
 # EXTEND TRAINING DATASET WITH PREDICTORS
 
-load("~/Desktop/benchmarkdata_new/benchmark_t2m_train.Rdata")
+load("./benchmark_t2m_train.Rdata")
 lead_times <- unique(benchmark_t2m_train$leadtime)
 id <- unique(benchmark_t2m_train$id)
 ens_names <- c("ctrl", paste("ens", 1:10, sep = ""))
@@ -234,7 +234,7 @@ save(benchmark_t2m_train_ext, file = "benchmark_t2m_train_ext.Rdata")
 
 # EXTEND TEST DATASET WITH PREDICTORS
 
-load("~/Desktop/benchmarkdata_new/benchmark_t2m_test.Rdata")
+load("./benchmark_t2m_test.Rdata")
 lead_times <- unique(benchmark_t2m_test$leadtime)
 id <- unique(benchmark_t2m_test$id)
 ens_names <- c("ctrl", paste("ens", 1:50, sep = ""))
