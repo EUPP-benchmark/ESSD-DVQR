@@ -23,7 +23,7 @@ The whole method is implemented in the programming language [R](https://www.r-pr
 ## Data 
 
 - To get the ESSD benchmark data set you can use the [download script](https://github.com/EUPP-benchmark/ESSD-benchmark-datasets). 
-- To construct data frames from the NetCDF files of the ESSD benchmark, you can use the the R-script `benchmarkdata.R`. With this script, you receive `benchmark_t2m_train_ext.Rdata`, which denotes the **training data** and `benchmark_t2m_test_ext.Rdata`, which contains the **test/validation data**. These constructed data sets will be used in the ESSD benchmark for this method.
+- To construct data frames from the NetCDF files of the ESSD benchmark, you can use the the R-script `benchmarkdata.R`. With this script, you receive `benchmark_t2m_train_ext.Rdata`, which denotes the **training data** and `benchmark_t2m_test_ext.Rdata`, which contains the **test/validation data**. These constructed data sets will be used in the ESSD benchmark for this method. To reveive the NetCDF files from the .Rdata files as final output, use the `create_netcdf_output.R` file. 
 
 The following table describes variable names that are referred to in training as well as test/validation data:
 
