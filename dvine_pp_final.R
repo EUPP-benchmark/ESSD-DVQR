@@ -5,6 +5,12 @@
 library(doMC)
 library(lubridate)
 library(vinereg)
+library(ncdf4)
+
+#determine number of stations
+data_fc <- nc_open("./data/ESSD_benchmark_training_data_forecasts.nc")
+nb_stations <- length(data_fc[["dim"]][["station_id"]][["vals"]])
+nc_close(data_fc)
 
 # load data (paths may need to be adapted!)
 load("./data/benchmark_t2m_train_ext.Rdata")
@@ -209,7 +215,7 @@ selcrit <- "aic"
 order <- NA
 
 leadtime <- seq(0, 120, 6)
-for (s in 1:length(leadtime) {
+for (s in 1:length(leadtime)) {
 
 lt <- leadtime[s]
 dates <- unique(vdata[vdata$leadtime == lt, "valid_date"])
@@ -217,7 +223,7 @@ nw <- 2
 ids <- unique(tdata$id)
 
 # start evaluation for each station for a fixed leadtime
-results.dvine <- foreach(l = 1:229) %dopar% {
+results.dvine <- foreach(l = 1:nb_stations) %dopar% {
 
   out <- dvine_pp(tdata,
                   vdata,
